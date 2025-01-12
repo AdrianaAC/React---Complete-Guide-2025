@@ -1,5 +1,3 @@
-import react from "react";
-
 export default function CoreConcept(props) {
   return (
     <li>

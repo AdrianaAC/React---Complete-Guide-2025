@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import CoreConcept from "./components/CoreConcept";
-import componentsImg from "./assets/components.png";
+import { CORE_CONCEPTS } from "./data/coreConcepts.js";
 
 function App() {
   return (
@@ -12,13 +12,13 @@ function App() {
           <h2>Core Concepts</h2>
           <ul>
             <CoreConcept
-              image={componentsImg}
-              title="Components"
-              description="The core UI building block of React apps."
+              image={CORE_CONCEPTS[0].image}
+              title={CORE_CONCEPTS[0].title}
+              description={CORE_CONCEPTS[0].description}
             />
-            <CoreConcept image="" title="Test2" description="TestDesc2" />
-            <CoreConcept image="" title="Test3" description="TestDesc3" />
-            <CoreConcept image="" title="Test4" description="TestDesc4" />
+            <CoreConcept {...CORE_CONCEPTS[1]} />
+            <CoreConcept {...CORE_CONCEPTS[2]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} />
           </ul>
         </section>
       </main>
