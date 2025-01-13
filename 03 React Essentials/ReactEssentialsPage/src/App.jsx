@@ -5,6 +5,10 @@ import TabButton from "./components/TabButton.jsx";
 import { CORE_CONCEPTS } from "./data/coreConcepts.js";
 
 function App() {
+  function handleClick(event) {
+    console.log(event.target.textContent);
+  }
+
   return (
     <div>
       <Header />
@@ -25,10 +29,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton>Components</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>State</TabButton>
+            <TabButton clicking={handleClick}>Components</TabButton>
+            <TabButton clicking={handleClick}>JSX</TabButton>
+            <TabButton clicking={handleClick}>Props</TabButton>
+            <TabButton clicking={handleClick}>State</TabButton>
           </menu>
         </section>
       </main>
