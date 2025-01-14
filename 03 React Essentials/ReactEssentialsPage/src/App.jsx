@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import CoreConcept from "./components/CoreConcept";
 import TabButton from "./components/TabButton.jsx";
@@ -6,7 +6,7 @@ import { EXAMPLES } from "./data/dynamicData.js";
 import { CORE_CONCEPTS } from "./data/coreConcepts.js";
 
 function App() {
-  const [selectedData, setSelectedData] = useState("Components");
+  const [selectedData, setSelectedData] = useState(null);
 
   // function handleClick(event) {
   //   console.log(event.target.textContent);
@@ -15,9 +15,20 @@ function App() {
   // }
 
   function handleClick(clickedButton) {
-    console.log(clickedButton);
     setSelectedData(clickedButton);
   }
+
+  let topicRender = !selectedData ? (
+    <p>Please, select a topic</p>
+  ) : (
+    <div>
+      <h3>{EXAMPLES[selectedData].title}</h3>
+      <p>{EXAMPLES[selectedData].description}</p>
+      <pre>
+        <code>{EXAMPLES[selectedData].code}</code>
+      </pre>
+    </div>
+  );
 
   return (
     <div>
@@ -47,13 +58,7 @@ function App() {
             <TabButton clicking={() => handleClick("State")}>State</TabButton>
           </menu>
           <div id="tab-content">
-            <h3>{EXAMPLES[selectedData].title}</h3>
-            <p>{EXAMPLES[selectedData].description}</p>
-            <pre>
-              <code>
-              {EXAMPLES[selectedData].code}
-              </code>
-            </pre>
+         {topicRender}
           </div>
         </section>
       </main>
