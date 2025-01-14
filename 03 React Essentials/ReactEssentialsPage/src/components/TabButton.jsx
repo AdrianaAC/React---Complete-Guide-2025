@@ -1,9 +1,11 @@
 export default function TabButton(props) {
-    const {children, clicking} = props;
+  const { children, clicking, isSelected } = props;
 
   return (
     <li>
-      <button onClick={clicking}>{children}</button>
+      <button className={isSelected ? "active" : null} onClick={clicking}>
+        {children}
+      </button>
     </li>
   );
 }
