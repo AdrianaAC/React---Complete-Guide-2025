@@ -30,51 +30,43 @@ function App() {
     </div>
   );
 
+  function renderCoreConcepts() {
+    return CORE_CONCEPTS.map((concept) => (
+      <CoreConcept
+        key={concept.title}
+        image={concept.image}
+        title={concept.title}
+        description={concept.description}
+      />
+    ));
+  }
+
+  function renderTabButtons() {
+    return Object.keys(EXAMPLES).map((key) => {
+      const example =EXAMPLES[key];
+        return (
+          <TabButton
+            key={example.title}
+            isSelected={selectedData === example.title}
+            clicking={() => handleClick(key)}
+          >
+            {example.title}
+          </TabButton>
+        );
+    });
+  }
+
   return (
     <div>
       <Header />
       <main>
         <section id="core-concepts">
           <h2>Core Concepts</h2>
-          <ul>
-            <CoreConcept
-              image={CORE_CONCEPTS[0].image}
-              title={CORE_CONCEPTS[0].title}
-              description={CORE_CONCEPTS[0].description}
-            />
-            <CoreConcept {...CORE_CONCEPTS[1]} />
-            <CoreConcept {...CORE_CONCEPTS[2]} />
-            <CoreConcept {...CORE_CONCEPTS[3]} />
-          </ul>
+          <ul>{renderCoreConcepts()}</ul>
         </section>
         <section id="examples">
           <h2>Examples</h2>
-          <menu>
-            <TabButton
-              isSelected={selectedData === "Components"}
-              clicking={() => handleClick("Components")}
-            >
-              Components
-            </TabButton>
-            <TabButton
-              isSelected={selectedData === "JSX"}
-              clicking={() => handleClick("JSX")}
-            >
-              JSX
-            </TabButton>
-            <TabButton
-              isSelected={selectedData === "Props"}
-              clicking={() => handleClick("Props")}
-            >
-              Props
-            </TabButton>
-            <TabButton
-              isSelected={selectedData === "State"}
-              clicking={() => handleClick("State")}
-            >
-              State
-            </TabButton>
-          </menu>
+          <menu>{renderTabButtons()}</menu>
           <div id="tab-content">{topicRender}</div>
         </section>
       </main>
