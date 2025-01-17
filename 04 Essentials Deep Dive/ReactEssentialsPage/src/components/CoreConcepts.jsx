@@ -1,5 +1,6 @@
 import { CORE_CONCEPTS } from "../data/coreConcepts.js";
 import CoreConcept from "./CoreConcept.jsx";
+import Section from "./Section.jsx";
 
 export default function CoreConcepts() {
   function renderCoreConcepts() {
@@ -14,9 +15,8 @@ export default function CoreConcepts() {
   }
 
   return (
-    <section id="core-concepts">
-      <h2>Core Concepts</h2>
+    <Section id="core-concepts" title="Core Concepts">
       <ul>{renderCoreConcepts()}</ul>
-    </section>
+    </Section>
   );
 }

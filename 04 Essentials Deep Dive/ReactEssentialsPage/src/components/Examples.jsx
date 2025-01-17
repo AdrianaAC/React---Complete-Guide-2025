@@ -1,6 +1,7 @@
 import TabButton from "./TabButton.jsx";
 import { EXAMPLES } from "../data/dynamicData.js";
 import { useState } from "react";
+import Section from "./Section.jsx";
 
 export default function Examples() {
   const [selectedData, setSelectedData] = useState(null);
@@ -37,10 +38,9 @@ export default function Examples() {
   }
 
   return (
-    <section id="examples">
-      <h2>Examples</h2>
+    <Section id="examples" title="Examples">
       <menu>{renderTabButtons()}</menu>
       <div id="tab-content">{topicRender}</div>
-    </section>
+    </Section>
   );
 }
