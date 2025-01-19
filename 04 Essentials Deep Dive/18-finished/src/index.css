@@ -74,13 +74,13 @@ h1 {
   border: 2px solid transparent;
 }
 
-.playersDashboard.highlight-player li.active {
+.playersDashboard.activePlayer li.active {
   border-color: #f6e35a;
   animation: pulse 2s infinite ease-in-out;
 }
 
-.playersDashboard.highlight-player li.active .player-name,
-.playersDashboard.highlight-player li.active .player-symbol {
+.playersDashboard.activePlayer li.active .player-name,
+.playersDashboard.activePlayer li.active .player-symbol {
   color: #f6e35a;
 }
 
