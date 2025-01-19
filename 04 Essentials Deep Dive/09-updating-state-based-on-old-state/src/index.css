@@ -160,7 +160,7 @@ ol {
   animation: pulse-text-size 2s infinite ease-out;
 }
 
-#game-board {
+.gameBoard {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -170,7 +170,7 @@ ol {
   flex-direction: column;
 }
 
-#game-board ol {
+.gameBoard ol {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -179,7 +179,7 @@ ol {
   padding: 0;
 }
 
-#game-board button {
+.gameBoard button {
   width: 8rem;
   height: 8rem;
   border: none;

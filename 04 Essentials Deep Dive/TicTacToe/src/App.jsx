@@ -1,4 +1,5 @@
 import Player from "./components/Player";
+import GameBoard from "./components/GameBoard";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
           <Player playerName="Player 1" playerSymbol="X" />
           <Player playerName="Player2" playerSymbol="O" />
         </ol>
-        GAME BOARD
+        <GameBoard/>
       </div>
       LOG
     </main>
