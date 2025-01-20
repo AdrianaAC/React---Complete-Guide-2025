@@ -7,15 +7,15 @@ const initialGameBoard = [
 ];
 
 export default function GameBoard({ onPlayerMove, turns }) {
- let gameBoard = initialGameBoard;
+  let gameBoard = initialGameBoard;
 
- for (const turn of turns) {
-   const {coord, player} = turn;
-    const {row, col} = coord;
+  for (const turn of turns) {
+    const { coord, player } = turn;
+    const { row, col } = coord;
 
-    gameBoard [row][col] = player; //Deriving state from props
- }
- console.log(turns);
+    gameBoard[row][col] = player; //Deriving state from props
+  }
+
   return (
     <ol className="gameBoard">
       {gameBoard.map((row, rowIndex) => (
@@ -23,7 +23,10 @@ export default function GameBoard({ onPlayerMove, turns }) {
           <ol>
             {row.map((playerSymbol, colIndex) => (
               <li key={colIndex}>
-                <button onClick={() => onPlayerMove(rowIndex, colIndex)}>
+                <button
+                  disabled={playerSymbol}
+                  onClick={() => onPlayerMove(rowIndex, colIndex)}
+                >
                   {playerSymbol}
                 </button>
               </li>
