@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const initialGameBoard = [
   [null, null, null],
@@ -6,20 +6,8 @@ const initialGameBoard = [
   [null, null, null],
 ];
 
-export default function GameBoard({ onPlayerMove, activePlayerSymbol }) {
-  const [gameBoard, setGameBoard] = useState(initialGameBoard);
-
-  function handleSquareClick(rowIndex, colIndex) {
-    setGameBoard((prevGB) => {
-      const updatedBoard = [...prevGB.map((row) => [...row])];
-      updatedBoard[rowIndex][colIndex] = activePlayerSymbol;
-      console.log(updatedBoard);
-      return updatedBoard;
-    });
-
-    onPlayerMove();
-  }
-
+export default function GameBoard({ onPlayerMove }) {
+  
   return (
     <ol className="gameBoard">
       {gameBoard.map((row, rowIndex) => (
@@ -27,7 +15,7 @@ export default function GameBoard({ onPlayerMove, activePlayerSymbol }) {
           <ol>
             {row.map((playerSymbol, colIndex) => (
               <li key={colIndex}>
-                <button onClick={() => handleSquareClick(rowIndex, colIndex)}>
+                <button onClick={() => onPlayerMove(rowIndex, colIndex)}>
                   {playerSymbol}
                 </button>
               </li>

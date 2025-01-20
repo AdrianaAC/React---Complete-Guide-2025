@@ -238,7 +238,7 @@ ol {
   box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
 }
 
-#log {
+.log {
   max-width: 20rem;
   color: #3f3b00;
   list-style: none;
@@ -247,13 +247,13 @@ ol {
   text-align: center;
 }
 
-#log li {
+.log li {
   border-radius: 4px;
   animation: slide-in-from-left 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
   margin: 0.75rem;
 }
 
-#log li.highlighted {
+.log li.highlighted {
   background-color: #3f3b00;
   color: white;
 }
