@@ -6,8 +6,16 @@ const initialGameBoard = [
   [null, null, null],
 ];
 
-export default function GameBoard({ onPlayerMove }) {
-  
+export default function GameBoard({ onPlayerMove, turns }) {
+ let gameBoard = initialGameBoard;
+
+ for (const turn of turns) {
+   const {coord, player} = turn;
+    const {row, col} = coord;
+
+    gameBoard [row][col] = player; //Deriving state from props
+ }
+ console.log(turns);
   return (
     <ol className="gameBoard">
       {gameBoard.map((row, rowIndex) => (

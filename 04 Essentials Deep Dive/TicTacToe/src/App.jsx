@@ -37,9 +37,9 @@ function App() {
             isActive={activePlayer === "O"}
           />
         </ol>
-        <GameBoard onPlayerMove={handlePlayerChange} />
+        <GameBoard onPlayerMove={handlePlayerChange} turns={gameTurns} />
       </div>
-      <Log />
+      <Log turns={gameTurns} />
     </main>
   );
 }
