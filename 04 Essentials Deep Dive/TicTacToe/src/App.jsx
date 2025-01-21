@@ -12,6 +12,7 @@ const initialGameBoard = [
 ];
 
 function App() {
+  const [players, setPlayers] = useState({ X: "Player 11", O: "Player 22" });
   const [activePlayer, setActivePlayer] = useState("X");
   const [gameTurns, setGameTurns] = useState([]);
 
@@ -36,7 +37,7 @@ function App() {
       firstCellSymbol === secondCellSymbol &&
       firstCellSymbol === thirdCellSymbol
     ) {
-      winner = firstCellSymbol;
+      winner = players[firstCellSymbol];
     }
   }
 
@@ -57,6 +58,17 @@ function App() {
     });
   }
 
+  function handlePlayerRename(playerSymbol, newName) {
+    setPlayers((prevPlayers) => {
+      console.log(prevPlayers);
+      console.log(playerSymbol, newName);
+      return {
+        ...prevPlayers,
+        [playerSymbol]: newName,
+      };
+    });
+  }
+
   function handleReset() {
     setGameTurns([]);
   }
@@ -69,11 +81,13 @@ function App() {
             playerName="Player 1"
             playerSymbol="X"
             isActive={activePlayer === "X"}
+            onRename={handlePlayerRename}
           />
           <Player
             playerName="Player2"
             playerSymbol="O"
             isActive={activePlayer === "O"}
+            onRename={handlePlayerRename}
           />
         </ol>
         {(winner || isDraw) && <GameOver winner={winner} reset={handleReset} />}
