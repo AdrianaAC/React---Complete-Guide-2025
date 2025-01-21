@@ -1,4 +1,4 @@
-export default function GameOver({ winner }) {
+export default function GameOver({ winner, reset }) {
   function finalRound(winner) {
     let message;
     winner
@@ -10,7 +10,7 @@ export default function GameOver({ winner }) {
     <div className="gameOver">
       <h2>Game Over!</h2>
       {finalRound(winner)}
-      <button onClick={() => window.location.reload()}>Play Again</button>
+      <button onClick={reset}>Play Again</button>
     </div>
   );
 }
