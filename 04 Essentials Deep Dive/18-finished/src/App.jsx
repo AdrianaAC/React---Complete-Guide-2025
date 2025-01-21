@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import Player from './components/Player.jsx';
-import GameBoard from './components/GameBoard.jsx';
-import Log from './components/Log.jsx';
-import GameOver from './components/GameOver.jsx';
-import { WINNING_COMBINATIONS } from './winning-combinations.js';
+import Player from "./components/Player.jsx";
+import GameBoard from "./components/GameBoard.jsx";
+import Log from "./components/Log.jsx";
+import GameOver from "./components/GameOver.jsx";
+import { WINNING_COMBINATIONS } from "./winning-combinations.js";
 
 const PLAYERS = {
-  X: 'Player 1',
-  O: 'Player 2'
+  X: "Player 1",
+  O: "Player 2",
 };
 
 const INITIAL_GAME_BOARD = [
@@ -18,10 +18,10 @@ const INITIAL_GAME_BOARD = [
 ];
 
 function deriveActivePlayer(gameTurns) {
-  let currentPlayer = 'X';
+  let currentPlayer = "X";
 
-  if (gameTurns.length > 0 && gameTurns[0].player === 'X') {
-    currentPlayer = 'O';
+  if (gameTurns.length > 0 && gameTurns[0].player === "X") {
+    currentPlayer = "O";
   }
 
   return currentPlayer;
@@ -90,10 +90,10 @@ function App() {
   }
 
   function handlePlayerNameChange(symbol, newName) {
-    setPlayers(prevPlayers => {
+    setPlayers((prevPlayers) => {
       return {
         ...prevPlayers,
-        [symbol]: newName
+        [symbol]: newName,
       };
     });
   }
@@ -101,17 +101,17 @@ function App() {
   return (
     <main>
       <div id="game-container">
-        <ol id="players" className="highlight-player">
+        <ol id="players" className="activePlayer">
           <Player
             initialName={PLAYERS.X}
             symbol="X"
-            isActive={activePlayer === 'X'}
+            isActive={activePlayer === "X"}
             onChangeName={handlePlayerNameChange}
           />
           <Player
             initialName={PLAYERS.O}
             symbol="O"
-            isActive={activePlayer === 'O'}
+            isActive={activePlayer === "O"}
             onChangeName={handlePlayerNameChange}
           />
         </ol>

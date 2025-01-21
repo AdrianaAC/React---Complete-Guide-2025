@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto+Slab:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto+Slab:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   line-height: 1.5;
 
   color: #ebe7ef;
@@ -23,7 +23,7 @@ body {
       rgba(241, 210, 70, 0.98),
       rgba(250, 176, 103, 0.87)
     ),
-    url('bg-pattern-dark.png');
+    url("bg-pattern-dark.png");
   background-repeat: repeat;
   background-size: 100% 100%, 30% 30%, 100% 100%;
   min-height: 110rem;
@@ -41,7 +41,7 @@ header img {
 }
 
 h1 {
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   font-size: 3rem;
   margin: 0 auto 3rem auto;
   color: #3f3b00;
@@ -57,7 +57,7 @@ h1 {
   position: relative;
 }
 
-#players {
+.playersDashboard {
   list-style: none;
   padding: 0;
   margin: 1rem 0;
@@ -67,24 +67,24 @@ h1 {
   gap: 2rem;
 }
 
-#players li {
+.playersDashboard li {
   display: flex;
   align-items: center;
   width: 50%;
   border: 2px solid transparent;
 }
 
-#players.highlight-player li.active {
+.playersDashboard.activePlayer li.active {
   border-color: #f6e35a;
   animation: pulse 2s infinite ease-in-out;
 }
 
-#players.highlight-player li.active .player-name,
-#players.highlight-player li.active .player-symbol {
+.playersDashboard.activePlayer li.active .player-name,
+.playersDashboard.activePlayer li.active .player-symbol {
   color: #f6e35a;
 }
 
-#players button {
+.playersDashboard button {
   width: 3rem;
   border: none;
   background: none;
@@ -96,7 +96,7 @@ h1 {
   text-align: center;
 }
 
-#players button:hover {
+.playersDashboard button:hover {
   color: #f8ca31;
 }
 
@@ -153,13 +153,13 @@ ol {
   background: none;
   color: #f8c031;
   border: none;
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   font-size: 4rem;
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
   animation: pulse-text-size 2s infinite ease-out;
 }
 
-#game-board {
+.gameBoard {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -169,7 +169,7 @@ ol {
   flex-direction: column;
 }
 
-#game-board ol {
+.gameBoard ol {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -178,7 +178,7 @@ ol {
   padding: 0;
 }
 
-#game-board button {
+.gameBoard button {
   width: 8rem;
   height: 8rem;
   border: none;
@@ -186,11 +186,11 @@ ol {
   color: #3f3b00;
   font-size: 5rem;
   cursor: pointer;
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   padding: 1rem;
 }
 
-#game-over {
+.gameOver {
   position: absolute;
   top: 0;
   left: 0;
@@ -204,21 +204,21 @@ ol {
   animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
 }
 
-#game-over h2 {
-  font-family: 'Caprasimo', cursive;
+.gameOver h2 {
+  font-family: "Caprasimo", cursive;
   font-size: 4rem;
   text-align: center;
   color: #fcd256;
   margin: 0;
 }
 
-#game-over p {
+.gameOver p {
   font-size: 2rem;
   text-align: center;
   color: #e1dec7;
 }
 
-#game-over button {
+.gameOver button {
   display: block;
   margin: 0 auto;
   font-size: 1.5rem;
@@ -232,14 +232,14 @@ ol {
   box-shadow: 0 0 8px rgba(255, 187, 0, 0.4);
 }
 
-#game-over button:hover {
+.gameOver button:hover {
   background: #fcd256;
   color: #3f3b00;
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
 }
 
-#log {
+.log {
   max-width: 20rem;
   color: #3f3b00;
   list-style: none;
@@ -248,13 +248,13 @@ ol {
   text-align: center;
 }
 
-#log li {
+.log li {
   border-radius: 4px;
   animation: slide-in-from-left 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
   margin: 0.75rem;
 }
 
-#log li.highlighted {
+.log li.highlighted {
   background-color: #3f3b00;
   color: white;
 }
@@ -265,7 +265,7 @@ ol {
 }
 
 #game-hints h2 {
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   font-size: 2rem;
   margin: 0;
 }
