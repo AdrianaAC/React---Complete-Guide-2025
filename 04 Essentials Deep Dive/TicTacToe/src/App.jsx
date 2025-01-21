@@ -3,6 +3,7 @@ import Player from "./components/Player";
 import GameBoard from "./components/GameBoard";
 import Log from "./components/Log";
 import { WINNING_COMBINATIONS } from "./data/winningCombos.js";
+import GameOver from "./components/GameOver.jsx";
 
 const initialGameBoard = [
   [null, null, null],
@@ -29,18 +30,17 @@ function App() {
     const firstCellSymbol = gameBoard[combo[0].row][combo[0].column];
     const secondCellSymbol = gameBoard[combo[1].row][combo[1].column];
     const thirdCellSymbol = gameBoard[combo[2].row][combo[2].column];
-    console.log(WINNING_COMBINATIONS)
-    console.log(combo);
-    console.log(firstCellSymbol, secondCellSymbol, thirdCellSymbol);
+
     if (
       firstCellSymbol &&
       firstCellSymbol === secondCellSymbol &&
       firstCellSymbol === thirdCellSymbol
     ) {
-      console.log("winner", firstCellSymbol);
       winner = firstCellSymbol;
     }
   }
+
+  const isDraw = gameTurns.length === 9 && !winner;
 
   function handlePlayerChange(rowIndex, colIndex) {
     setActivePlayer((curPlayer) => (curPlayer === "X" ? "O" : "X"));
@@ -72,7 +72,7 @@ function App() {
             isActive={activePlayer === "O"}
           />
         </ol>
-        {winner && <h2>{winner} wins!</h2>}
+        {(winner || isDraw) && <GameOver winner={winner} />}
         <GameBoard onPlayerMove={handlePlayerChange} board={gameBoard} />
       </div>
       <Log turns={gameTurns} />

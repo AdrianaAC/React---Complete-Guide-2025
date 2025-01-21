@@ -189,7 +189,7 @@ ol {
   padding: 1rem;
 }
 
-#game-over {
+.gameOver {
   position: absolute;
   top: 0;
   left: 0;
@@ -203,7 +203,7 @@ ol {
   animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
 }
 
-#game-over h2 {
+.gameOver h2 {
   font-family: "Caprasimo", cursive;
   font-size: 4rem;
   text-align: center;
@@ -211,13 +211,13 @@ ol {
   margin: 0;
 }
 
-#game-over p {
+.gameOver p {
   font-size: 2rem;
   text-align: center;
   color: #e1dec7;
 }
 
-#game-over button {
+.gameOver button {
   display: block;
   margin: 0 auto;
   font-size: 1.5rem;
@@ -231,7 +231,7 @@ ol {
   box-shadow: 0 0 8px rgba(255, 187, 0, 0.4);
 }
 
-#game-over button:hover {
+.gameOver button:hover {
   background: #fcd256;
   color: #3f3b00;
   transform: scale(1.1);
