@@ -1,6 +1,13 @@
 import { useState } from "react";
 import styles from "./AuthInputs.module.css";
+import { styled } from "styled-components";
 
+const StyledControls = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+`;
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
@@ -23,7 +30,8 @@ export default function AuthInputs() {
 
   return (
     <div className={styles.authInputs}>
-      <div className={styles.controls}>
+      {/* <div className={styles.controls}> */}
+      <StyledControls>
         <p>
           <label
             className={`${styles.label} ${emailNotValid ? styles.invalid : ""}`}
@@ -52,15 +60,16 @@ export default function AuthInputs() {
             }
           />
         </p>
-      </div>
-      <div className={styles.actions}>
-        <button type="button" className={styles.textButton}>
-          Create a new account
-        </button>
-        <button className={styles.button} onClick={handleLogin}>
-          Sign In
-        </button>
-      </div>
+
+        <div className={styles.actions}>
+          <button type="button" className={styles.textButton}>
+            Create a new account
+          </button>
+          <button className={styles.button} onClick={handleLogin}>
+            Sign In
+          </button>
+        </div>
+      </StyledControls>
     </div>
   );
 }
