@@ -16,19 +16,20 @@ const StyledLabel = styled.label`
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #6b7280;
+  color: ${({ $invalid }) => ($invalid ? "#f87171" : "#6b7280")};
 `;
 
 const StyledInput = styled.input`
   width: 100%;
   padding: 0.75rem 1rem;
   line-height: 1.5;
-  background-color: #d1d5db;
-  color: #374151;
-  border: 1px solid transparent;
+  background-color: ${({ $invalid }) => ($invalid ? "#fed2d2" : "#d1d5db")};
+  color: ${({ $invalid }) => ($invalid ? "#ef4444" : "#111827")};
+  border: 1px solid ${({ $invalid }) => ($invalid ? "#f73f3f" : "transparent")};
   border-radius: 0.25rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 `;
+
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
@@ -53,28 +54,18 @@ export default function AuthInputs() {
     <div className={styles.authInputs}>
       <StyledControls>
         <p>
-          <StyledLabel
-            className={emailNotValid ? styles.invalid : ""}
-          >
-            Email
-          </StyledLabel>
+          <StyledLabel $invalid={emailNotValid}>Email</StyledLabel>
           <StyledInput
             type="email"
-            className={emailNotValid ? styles.invalid : undefined}
+            $invalid={emailNotValid}
             onChange={(event) => handleInputChange("email", event.target.value)}
           />
         </p>
         <p>
-          <StyledLabel
-            className={`${styles.label} ${
-              passwordNotValid ? styles.invalid : ""
-            }`}
-          >
-            Password
-          </StyledLabel>
+          <StyledLabel $invalid={passwordNotValid}>Password</StyledLabel>
           <StyledInput
             type="password"
-            className={passwordNotValid ? styles.invalid : undefined}
+            $invalid={passwordNotValid}
             onChange={(event) =>
               handleInputChange("password", event.target.value)
             }
