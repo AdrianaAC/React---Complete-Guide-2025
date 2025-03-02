@@ -6,7 +6,7 @@ export default function Results({ userInput }) {
     results[0].valueEndOfYear -
     results[0].interest -
     results[0].annualInvestment;
-
+ 
   console.log(results);
   return (
     <section className="results">

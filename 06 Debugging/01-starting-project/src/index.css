@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: radial-gradient(#303b37, #1a1f1d);
@@ -14,23 +14,24 @@ body {
   min-height: 100vh;
 }
 
-.header {
+#header {
   text-align: center;
   margin: 3rem auto;
 }
 
-.header img {
+
+#header img {
   width: 5rem;
   height: 5rem;
   object-fit: contain;
   background-color: transparent;
 }
 
-.header h1 {
+#header h1 {
   font-size: 1.5rem;
 }
 
-.userInput {
+#user-input {
   padding: 1rem;
   max-width: 30rem;
   margin: 2rem auto;
@@ -38,22 +39,22 @@ body {
   background: linear-gradient(180deg, #307e6c, #2b996d);
 }
 
-.inputGroup {
+.input-group {
   display: flex;
   justify-content: space-evenly;
   gap: 1.5rem;
 }
 
-.userInput label {
+#user-input label {
   display: block;
   margin-bottom: 0.25rem;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 0.5rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.userInput input {
+#user-input input {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #76c0ae;
@@ -63,7 +64,7 @@ body {
   font-size: 1rem;
 }
 
-.resultsTable {
+#result {
   max-width: 50rem;
   margin: 2rem auto;
   padding: 1rem;
@@ -72,13 +73,13 @@ body {
   text-align: right;
 }
 
-.resultsTable thead {
+#result thead {
   font-size: 0.7rem;
   color: #83e6c0;
 }
 
-.resultsTable tbody {
-  font-family: "Roboto Condensed", sans-serif;
+#result tbody {
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 0.85rem;
   color: #c2e9e0;
 }
