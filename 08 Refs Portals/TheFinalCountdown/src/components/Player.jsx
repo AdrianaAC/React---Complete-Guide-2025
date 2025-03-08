@@ -4,7 +4,9 @@ export default function Player() {
   const [name, setName] = useState("");
   const clickHandler = () => {
     setName(playerName.current.value);
-    setSubmit(true);
+    setTimeout(() => {
+      playerName.current.value = "";
+    }, 2000);
   };
   return (
     <section id="player">
