@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 export default function Player() {
   const playerName = useRef();
   const [name, setName] = useState("");
+  
   const clickHandler = () => {
     setName(playerName.current.value);
     setTimeout(() => {
